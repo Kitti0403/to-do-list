@@ -1,6 +1,6 @@
 let myListItem = document.getElementsByTagName("li");
 
-for (let index = 0; index < myListItem.length; index++){
+for (let index = 0; index < myListItem.length; index++) {
     let span = document.createElement("span");
     let txt = document.createTextNode("\u00d7");
     span.className = "close";
@@ -9,27 +9,28 @@ for (let index = 0; index < myListItem.length; index++){
 }
 
 let close = document.getElementsByClassName("close");
-for (let i = 0; i < close.length; i++){
-    close[i].onclick = function(){
+for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
         let div = this.parentElement;
-div.style.display = "none"
+        div.style.display = "none"
     }
 }
 
 let list = document.querySelector("ul");
-list.addEventListener("click", function(e){
-        e.target.classList.toggle("checked");
+list.addEventListener("click", function (e) {
+    e.target.classList.toggle("checked");
 }, false);
 
-function addItem(){
+function addItem() {
     let li = document.createElement("li");
     let inputValue = document.getElementById("ListInput").value;
     let t = document.createTextNode(inputValue);
     li.appendChild(t);
-    if(inputValue === ""){
-        alert("WRITE SMT")
+    if (inputValue === "") {
+        alert("Write something to do later")
     }
-    else{document.getElementById("ulList").appendChild(li);
+    else {
+        document.getElementById("ulList").appendChild(li);
     }
     document.getElementById("ListInput").value = "";
 
@@ -39,8 +40,8 @@ function addItem(){
     span.appendChild(txt);
     li.appendChild(span);
 
-    for(let i = 0; i < close.length; i++){
-        close[i].onclick = function (){
+    for (let i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
             let div = this.parentElement;
             div.style.display = "none";
         };
